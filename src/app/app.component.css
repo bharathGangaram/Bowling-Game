@@ -1,0 +1,53 @@
+ * {
+     padding: 0;
+     margin: 0;
+ }
+
+ .main {
+     background: linear-gradient(to top, #001169, #003088, #004ea5, #006dc1, #008cdb);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+ }
+
+ div{
+    text-align: center;
+ }
+
+ select {
+     width: 210px;
+     padding: 6px 10px;
+ }
+
+ button {
+    padding: 6px;
+    margin: 5px;
+ }
+ tr{
+    
+ }
+ tr:first-child td{
+    background-color: transparent;
+ }
+
+ td {
+     border-spacing: 10px;
+     color: #fff;
+     background-color: #2e69f1;
+     height: 70px;
+     width: 90px;
+     display: center;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+
+ }
+
+ td:first-child{
+    width:130px;
+    text-align: center;
+ }
+ 
+
+ 

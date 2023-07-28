@@ -1,0 +1,50 @@
+<div class="main">
+  <div [ngSwitch]="gameStep">
+    <div *ngSwitchCase="1">
+
+      <select   name="Select Number of Players" id="" [(ngModel)]="noOfPlayers">
+        <option default value="0">Select Number of Players</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <button (click)="startGame()" [disabled]="!noOfPlayers">Start Game</button>
+    </div>
+    <div *ngSwitchCase="2">
+      <div>
+        <table>
+          <tr>
+            <td></td>
+            <td *ngFor="let item of columns;let i = index">{{i+1}}</td>
+            <td>Total</td>
+          </tr>
+          <tr class="row" *ngFor="let item of players;let inx = index">
+            <td c >Player {{inx +1}}</td>
+            <td *ngFor="let roll of item;let i = index">
+               <p><span *ngIf="!roll.strike">{{roll.firstRoll}}</span><span *ngIf="roll.strike">x</span> &nbsp;
+                <span  *ngIf="!roll.spare">{{roll.secondRoll}}</span> <span *ngIf="roll.spare">/</span></p>
+            <span *ngIf="frameTotal(inx,i)"> {{ frameTotal(inx,i) }}</span>
+             
+            
+            </td>
+            <td>{{playerTotal(inx)}}</td>
+          </tr>
+        </table>
+      </div>
+      <button (click)="hit()" *ngIf="!isGameEnd">Roll</button>
+      <button (click)="newGame()" *ngIf="isGameEnd">New Game</button>
+     
+    </div>
+    <div *ngSwitchCase="4">
+
+      <button (click)="startGame()">Start Game</button>
+    </div>
+
+  </div>
+
+
+
+</div>
